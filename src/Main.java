@@ -17,9 +17,6 @@ public class Main {
         if(startNumber == 0) {
             startNumber = startNumber + 1;
         }
-        if(startNumber <= 1) {
-            System.out.println(1);
-        }
         if(startNumber == 1) {
             startNumber = startNumber + 1;
         }
