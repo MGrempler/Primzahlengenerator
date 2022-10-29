@@ -14,36 +14,27 @@ public class Main {
         String AnswerII = scannerII.nextLine();
         int endNumber = Integer.valueOf(AnswerII);
 
-        if(startNumber == 0) {
-            startNumber = startNumber + 1;
-        }
-        if(startNumber == 1) {
-            startNumber = startNumber + 1;
-        }
-        if(startNumber < 2) {
-            System.out.println(2);
-        }
-        if(startNumber == 2) {
-            System.out.println(2);
-        }
-        if(endNumber == 3 || startNumber == 3 || !(startNumber > 3)) {
-            System.out.println(3);
-        }
-        if(startNumber <= 4) {
-            if(endNumber > 4) {
-                System.out.println(5);
+        if (startNumber < endNumber) {
+            if (startNumber == 0) {
+                startNumber = startNumber + 1;
             }
-        }
+            if (startNumber == 1) {
+                startNumber = startNumber + 1;
+            }
 
-        for(int i = startNumber; i < endNumber; i++) {
-
-            if(i % 2 != 0) {
-                if(i % 3 != 0) {
-                    if(i % 5 != 0 ) {
-                            System.out.println(i);
+            for (int i = startNumber; i < endNumber; i++) {
+                boolean isprime = true;
+                for (int j = 2; j < i - 1; j++) {
+                    if (i % j == 0) {
+                        isprime = false;
                     }
                 }
+                if (isprime) {
+                    System.out.println(i);
+                }
             }
+        } else {
+            System.out.println("Sorry the startnumber can`t be higher than the endnumber. ");
         }
     }
 }
